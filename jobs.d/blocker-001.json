@@ -1,0 +1,9 @@
+{
+  "job_id": "blocker-001",
+  "description": "Hangs forever to test scheduler isolation.",
+  "schedule": "*/1 * * * *",
+  "task": {
+    "type": "execute_command",
+    "command": "sleep 3600"
+  }
+}

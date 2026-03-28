@@ -1,0 +1,9 @@
+{
+  "job_id": "canary-001",
+  "description": "Must keep firing even while blocker is stuck.",
+  "schedule": "*/1 * * * *",
+  "task": {
+    "type": "execute_command",
+    "command": "echo 'canary-001 alive'"
+  }
+}
