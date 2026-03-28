@@ -10,6 +10,8 @@ chronoflow:
   jobs:
     directory: ./jobs.d
     watch-debounce-ms: 400
+    # Set to empty string to disable file append
+    execution-results-log: ./logs/execution-results.log
 
 logging:
   level:

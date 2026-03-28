@@ -25,6 +25,7 @@ class ChronoflowApplicationTests {
     static void registerProperties(DynamicPropertyRegistry registry) {
         registry.add("chronoflow.jobs.directory", () -> JOB_DIR.toAbsolutePath().toString());
         registry.add("chronoflow.jobs.watch-debounce-ms", () -> "0");
+        registry.add("chronoflow.jobs.execution-results-log", () -> "");
     }
 
     @Test

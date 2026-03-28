@@ -36,6 +36,7 @@ class JobSchedulerIntegrationTest {
     static void registerProperties(DynamicPropertyRegistry registry) {
         registry.add("chronoflow.jobs.directory", () -> JOB_DIR.toAbsolutePath().toString());
         registry.add("chronoflow.jobs.watch-debounce-ms", () -> "0");
+        registry.add("chronoflow.jobs.execution-results-log", () -> "");
     }
 
     @Autowired
@@ -86,7 +87,10 @@ class JobSchedulerIntegrationTest {
         jobScheduleService.syncFile(f);
         await().atMost(Duration.ofSeconds(25)).untilAsserted(() -> assertThat(
                 executionLogger.getRecentRecords().stream()
-                        .anyMatch(r -> "echo-1".equals(r.jobId()) && r.status() == ExecutionStatus.SUCCESS)
+                        .anyMatch(
+                                r -> "echo-1".equals(r.jobId())
+                                        && r.status() == ExecutionStatus.SUCCESS
+                                        && "hi".equals(r.output()))
         ).isTrue());
     }
 

@@ -21,6 +21,11 @@ public class JobsProperties {
     @Min(0)
     private long watchDebounceMs = 400;
 
+    /**
+     * If non-blank, each job execution appends one line (with captured stdout/stderr) to this file.
+     */
+    private String executionResultsLog = "./logs/execution-results.log";
+
     public String getDirectory() {
         return directory;
     }
@@ -35,5 +40,13 @@ public class JobsProperties {
 
     public void setWatchDebounceMs(long watchDebounceMs) {
         this.watchDebounceMs = watchDebounceMs;
+    }
+
+    public String getExecutionResultsLog() {
+        return executionResultsLog;
+    }
+
+    public void setExecutionResultsLog(String executionResultsLog) {
+        this.executionResultsLog = executionResultsLog;
     }
 }

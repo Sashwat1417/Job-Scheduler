@@ -8,6 +8,7 @@ public record ExecutionRecord(
         Instant startedAt,
         Instant finishedAt,
         ExecutionStatus status,
-        String detail
+        String detail,
+        String output
 ) {
 }
