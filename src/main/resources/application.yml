@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: chronoflow-job-scheduler
+  quartz:
+    job-store-type: memory
+    properties:
+      org.quartz.threadPool.threadCount: "8"
+
+chronoflow:
+  jobs:
+    directory: ./jobs.d
+    watch-debounce-ms: 400
+
+logging:
+  level:
+    com.chronoflow: INFO
