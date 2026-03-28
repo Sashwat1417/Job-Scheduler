@@ -13,7 +13,7 @@
 
     <groupId>com.chronoflow</groupId>
     <artifactId>job-scheduler</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.1-SNAPSHOT</version>
     <name>Chronoflow Job Scheduler</name>
     <description>In-memory job scheduler with directory-based JSON definitions</description>
 
